@@ -6,12 +6,15 @@
       <span class="result">12+ stays</span>
     </header>
 
-    <div class="list-stays"></div>
+    <div class="list-stays">
+      {{ data }}
+    </div>
   </main>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import { mapState, mapActions } from "vuex";
 
 import TitleComponent from "@/components/TitleComponent.vue";
 
@@ -19,6 +22,13 @@ export default defineComponent({
   name: "HomeView",
   components: {
     TitleComponent,
+  },
+  computed: {
+    ...mapState(["data"]),
+    ...mapActions(["getData"]),
+  },
+  created() {
+    this.getData;
   },
 });
 </script>
