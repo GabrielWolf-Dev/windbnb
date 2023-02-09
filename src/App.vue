@@ -2,6 +2,7 @@
   <div class="container">
     <HeaderComponent />
     <router-view></router-view>
+    <FooterComponent />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 import { defineComponent } from "vue";
 
 import HeaderComponent from "./components/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     HeaderComponent,
+    FooterComponent,
   },
 });
 </script>
@@ -86,5 +89,6 @@ textarea {
   max-width: 1280px;
   margin: 0 auto;
   padding: 40px 2%;
+  position: relative;
 }
 </style>
