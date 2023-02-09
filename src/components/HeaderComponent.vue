@@ -4,11 +4,24 @@
       <img src="@/assets/logo.png" alt="Logo" />
     </router-link>
 
-    <button class="btn-modal">
-      <span>Search stays</span>
+    <nav>
+      <ul>
+        <li class="item-nav">
+          <router-link class="link" to="about">About</router-link>
+        </li>
+        <li class="item-nav">
+          <button class="btn-modal">
+            <span>Search stays</span>
 
-      <img class="icon-search" src="@/assets/search.svg" alt="Search icon" />
-    </button>
+            <img
+              class="icon-search"
+              src="@/assets/search.svg"
+              alt="Search icon"
+            />
+          </button>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -46,11 +59,40 @@ span {
   border-right: 1px solid var(--color-base-02);
 }
 
+.item-nav {
+  display: inline-block;
+}
+
+.item-nav:first-child {
+  margin-right: 16px;
+}
+
+.link {
+  color: var(--color-base-03);
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .link {
+    text-decoration: underline;
+  }
+}
+
 @media (max-width: 420px) {
   .header {
     flex-direction: column;
     justify-content: center;
     gap: 40px;
+    text-align: center;
+  }
+
+  .item-nav:first-child {
+    margin-bottom: 20px;
   }
 }
 </style>
