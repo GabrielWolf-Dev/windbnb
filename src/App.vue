@@ -17,6 +17,8 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import SearchComponent from "@/components/SearchComponent.vue";
 
+
+
 export default defineComponent({
   name: "App",
   components: {
@@ -26,6 +28,9 @@ export default defineComponent({
   },
   computed: {
     ...mapState(["isOpenSearch"]),
+  },
+  created() {
+    document.title = "Windbnb | Home";
   },
 });
 </script>

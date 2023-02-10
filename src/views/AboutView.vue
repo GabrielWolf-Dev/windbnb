@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "AboutView",
+  created() {
+    document.title = "Windbnb | About";
+  },
 };
 </script>
 
