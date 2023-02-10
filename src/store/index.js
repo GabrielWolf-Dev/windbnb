@@ -3,12 +3,16 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     data: [],
+    isOpenSearch: false,
   },
   getters: {},
   mutations: {
     GET_DATA(state, payload) {
       state.data = payload;
     },
+    HANDLE_SEARCH(state, payload) {
+      state.isOpenSearch = payload;
+    }
   },
   actions: {
     async getData(context) {

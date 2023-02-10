@@ -35,7 +35,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import { mapState, mapActions } from "vuex";
+import store from "@/store";
+import { mapState } from "vuex";
 
 import TitleComponent from "@/components/TitleComponent.vue";
 
@@ -46,10 +47,9 @@ export default defineComponent({
   },
   computed: {
     ...mapState(["data"]),
-    ...mapActions(["getData"]),
   },
   created() {
-    this.getData;
+    store.dispatch("getData");
   },
 });
 </script>

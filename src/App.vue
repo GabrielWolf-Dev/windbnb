@@ -1,22 +1,31 @@
 <template>
-  <div class="container">
-    <HeaderComponent />
-    <router-view></router-view>
-    <FooterComponent />
+  <div>
+    <div class="container">
+      <HeaderComponent />
+      <router-view></router-view>
+      <FooterComponent />
+    </div>
+    <SearchComponent v-if="isOpenSearch" />
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import { mapState } from "vuex";
 
-import HeaderComponent from "./components/HeaderComponent.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
+import SearchComponent from "@/components/SearchComponent.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     HeaderComponent,
     FooterComponent,
+    SearchComponent,
+  },
+  computed: {
+    ...mapState(["isOpenSearch"]),
   },
 });
 </script>
@@ -30,6 +39,7 @@ export default defineComponent({
 
 body {
   background-color: var(--color-base-01);
+  position: relative;
 }
 
 #app {

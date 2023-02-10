@@ -10,7 +10,7 @@
           <router-link class="link" to="about">About</router-link>
         </li>
         <li class="item-nav">
-          <button class="btn-modal">
+          <button @click="openSearch" class="btn-modal">
             <span>Search stays</span>
 
             <img
@@ -27,9 +27,15 @@
 
 <script>
 import { defineComponent } from "vue";
+import store from "@/store";
 
 export default defineComponent({
   name: "HeaderComponent",
+  methods: {
+    openSearch() {
+      store.commit("HANDLE_SEARCH", true);
+    },
+  },
 });
 </script>
 
