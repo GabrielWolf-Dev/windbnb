@@ -21,8 +21,8 @@ export default {
 <style scoped>
 .footer {
   width: 100%;
-  padding: 40px 2%;
   text-align: center;
+  padding-top: 20px;
   color: var(--color-base-03);
 }
 

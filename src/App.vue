@@ -90,5 +90,8 @@ textarea {
   margin: 0 auto;
   padding: 40px 2%;
   position: relative;
+  display: grid;
+  gap: 40px;
+  grid-template-rows: 60px;
 }
 </style>
