@@ -94,6 +94,10 @@ input {
   outline-color: var(--color-primary);
 }
 
+fieldset {
+  border: 0;
+}
+
 textarea {
   resize: none;
 }
