@@ -1,92 +1,96 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center"><a href="https://windbnb-vue.vercel.app/" target="_blank">{ Windbnb }</a></h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+  Solução de um desafio na plataforma  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
 </div>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
+    <a href="https://windbnb-vue.vercel.app/">
+      Demonstração
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
+    <a href="https://github.com/GabrielWolf-Dev/windbnb">
+      Solução
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD">
-      Challenge
+      Desafio
     </a>
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
+## Conteúdos do README
 
 - [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+  - [Tecnologias](#tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Como rodar o projeto](#como-rodar-o-projeto)
+- [Aprendizados](#aprendizados)
+- [Contato](#contato)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<div style="width: 100%; text-align: center;">
+  <img width="1280" heigth="720" src="https://github.com/GabrielWolf-Dev/windbnb/blob/main/src/assets/illustration-project.png?raw=true" alt="Screenshot" />
+</div>
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+<div style="width: 100%; text-align: center; margin-top: 20px;">
+  <img width="800" heigth="600" src="https://github.com/GabrielWolf-Dev/windbnb/blob/main/src/gif/windbnb-demo.gif?raw=true" alt="Screenshot" />
+</div>
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+### Tecnologias
 
-### Built With
+- [HTML 5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Vue 3](https://vuejs.org/)
+  - [Vuex](https://vuex.vuejs.org/)
+  - [Vue router](https://router.vuejs.org/)
+- [commitlint](https://github.com/conventional-changelog/commitlint)
+- [husky](https://github.com/typicode/husky)
+- [commitizen](https://github.com/commitizen/cz-cli)
+- [Yarn](https://classic.yarnpkg.com/en/)
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+## Funcionalidades
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- Simples projeto que exibe os dados via uma requisição do arquivo json do repositório, o que dificultou um pouco para desenvolver algumas lógicas, pois não tinha as mesmas funcionalidades de uma API completa, mas para esta solução é o suficiente.
+- Há um filtro de acordo com o local e quantidade de pessoas para achar alguma moradia e o usuário pode selecionar para ver mais detalhes da moradia pesquisada.
+- Adicionei uma parte explicando sobre o projeto para treinar um pouco a parte de roteamento do Vue.
+- Os dados foram gerenciados com o Vuex para facilitar e previnir de fazer prop drilling nos componentes.
+- Padronizei os commits do projeto, seguindo o [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) com o auxílio das libs commitlint, husky e commitizen. Em futuros projetos eu pretendo seguir o mesmo padrão para deixar mais consistente os repositórios.
 
-## Features
+## Como rodar o projeto
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD) was to build an application to complete the given user stories.
-
-## How To Use
-
-<!-- Example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Para clonar e rodar este projeto, você vai precisar do [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) (que contém o [npm](https://www.npmjs.com/)) instalados no seu computador. Segue os comandos abaixo:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+# Instale o yarn(gerenciador de pacotes do projeto)
+$ npm install yarn -g
 
-# Install dependencies
-$ npm install
+# Clone este repositório
+$ git clone git@github.com:GabrielWolf-Dev/windbnb.git
 
-# Run the app
-$ npm start
+# Instale as dependências
+$ yarn install
+
+# Rode o app
+$ yarn serve
 ```
 
-## Acknowledgements
+## Aprendizados
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+- Vue.js na sua versão 3
+- Vuex
+- Vue router
+- Padronizar os commits, seguindo conventional commits com as libs commitlint, husky e commitizen 
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+## Contato
 
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website: [gwdev-portfolio](https://gwdev-portfolio.vercel.app/)
+- GitHub: [@GabrielWolf-Dev](https://github.com/GabrielWolf-Dev)
+- Linkedin: [@Gabriel Wolf](https://www.linkedin.com/in/gabriel-wolf-frontend/)
