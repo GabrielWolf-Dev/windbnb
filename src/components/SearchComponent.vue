@@ -27,16 +27,26 @@
         </form>
 
         <ul class="list-stays" v-if="resultSearch.length !== 0">
-          <li class="stay-item" v-for="stay in resultSearch" :key="stay.id">
-            <img class="stay-icon" src="@/assets/place.svg" alt="Place icon" />
-            <p class="stay-description">
-              {{ stay.title }}
-              <img class="stay-img" :src="stay.photo" :alt="stay.title" />
-              <span class="stay-rate-mb">
-                <img src="@/assets/star-rate.svg" alt="Rating icon" />
-                {{ stay.rating }}
-              </span>
-            </p>
+          <li
+            v-for="(stay, index) in resultSearch"
+            @click="setStaySelected(stay.title)"
+            :key="`${stay.title}${index}`"
+          >
+            <router-link class="stay-item" to="/stay">
+              <img
+                class="stay-icon"
+                src="@/assets/place.svg"
+                alt="Place icon"
+              />
+              <p class="stay-description">
+                {{ stay.title }}
+                <img class="stay-img" :src="stay.photo" :alt="stay.title" />
+                <span class="stay-rate-mb">
+                  <img src="@/assets/star-rate.svg" alt="Rating icon" />
+                  {{ stay.rating }}
+                </span>
+              </p>
+            </router-link>
           </li>
         </ul>
         <p class="message" v-else>{{ messageSearch }}</p>
@@ -62,29 +72,43 @@ export default {
     };
   },
   computed: {
-    ...mapState(["data"]),
+    ...mapState(["data", "staySelected"]),
   },
   methods: {
     closeSearch() {
       store.commit("HANDLE_SEARCH", false);
     },
     searchLocation() {
-      const [city, country] = this.location.replace(" ", "").split(",");
+      const arraySplited = this.location.replace(" ", "").split(",");
+      let city, country;
+      if (arraySplited.length >= 2) {
+        city = arraySplited[0];
+        country = arraySplited[1];
+      }
 
       this.data.forEach((stay) => {
         if (
-          stay.city === city &&
-          stay.country === country &&
-          stay.maxGuests > this.guests
+          stay.city === this.location ||
+          stay.country === this.location ||
+          stay.city === city ||
+          (stay.country === country && stay.maxGuests > this.guests)
         ) {
           this.resultSearch.push(stay);
           return;
         }
 
         this.resultSearch = [];
-        this.messageSearch = "No place found :(";
+        this.messageSearch =
+          "No place found. Insert city and country in the respective order";
         return;
       });
+    },
+    setStaySelected(description) {
+      const stayFilter = this.resultSearch.filter(
+        (stay) => stay.title === description
+      )[0];
+
+      store.commit("SET_STAY", stayFilter);
     },
   },
 };

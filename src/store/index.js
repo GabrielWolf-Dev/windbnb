@@ -4,6 +4,7 @@ export default createStore({
   state: {
     data: [],
     isOpenSearch: false,
+    staySelected: null,
   },
   getters: {},
   mutations: {
@@ -12,7 +13,10 @@ export default createStore({
     },
     HANDLE_SEARCH(state, payload) {
       state.isOpenSearch = payload;
-    }
+    },
+    SET_STAY(state, payload) {
+      state.staySelected = payload;
+    },
   },
   actions: {
     async getData(context) {
