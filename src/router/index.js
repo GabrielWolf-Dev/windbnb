@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import StayView from "@/views/StayView.vue";
+import store from "@/store";
 
 const routes = [
   {
@@ -18,6 +19,17 @@ const routes = [
     path: "/stay",
     name: "stay",
     component: StayView,
+    beforeEnter: (to, from, next) => {
+      if (store.state.staySelected === null) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
   },
 ];
 

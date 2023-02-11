@@ -92,12 +92,16 @@ span {
   .header {
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     text-align: center;
   }
 
   .item-nav:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+  }
+
+  .btn-modal {
+    padding: 16px 20px;
   }
 }
 </style>

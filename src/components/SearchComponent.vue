@@ -29,10 +29,13 @@
         <ul class="list-stays" v-if="resultSearch.length !== 0">
           <li
             v-for="(stay, index) in resultSearch"
-            @click="setStaySelected(stay.title)"
             :key="`${stay.title}${index}`"
           >
-            <router-link class="stay-item" to="/stay">
+            <router-link
+              class="stay-item"
+              to="/stay"
+              @click="setStaySelected(stay.title)"
+            >
               <img
                 class="stay-icon"
                 src="@/assets/place.svg"
@@ -189,6 +192,13 @@ export default {
   gap: 12px;
   align-items: center;
   margin: 20px 0;
+  transition: 0.3s;
+  border-radius: 12px;
+  padding: 8px 2%;
+}
+
+.stay-item:hover {
+  background-color: #e6e6e6;
 }
 
 .stay-description {

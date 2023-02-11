@@ -31,4 +31,10 @@ export default {
   color: var(--color-base-03);
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: var(--font-size-14);
+  }
+}
 </style>

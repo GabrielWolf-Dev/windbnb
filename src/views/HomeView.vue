@@ -50,6 +50,7 @@ export default defineComponent({
   },
   created() {
     store.dispatch("getData");
+    store.commit("SET_STAY", null);
     document.title = "Windbnb | Home";
   },
 });

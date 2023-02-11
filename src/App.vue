@@ -17,8 +17,6 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import SearchComponent from "@/components/SearchComponent.vue";
 
-
-
 export default defineComponent({
   name: "App",
   components: {
@@ -110,7 +108,7 @@ textarea {
   padding: 40px 2%;
   position: relative;
   display: grid;
-  gap: 40px;
+  gap: 60px;
   grid-template-rows: 60px;
 }
 </style>
