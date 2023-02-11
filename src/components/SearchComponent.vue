@@ -112,6 +112,7 @@ export default {
       )[0];
 
       store.commit("SET_STAY", stayFilter);
+      store.commit("HANDLE_SEARCH", false);
     },
   },
 };

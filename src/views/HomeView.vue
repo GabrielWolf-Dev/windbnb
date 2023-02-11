@@ -3,7 +3,7 @@
     <header class="home-header">
       <TitleComponent text="Stays in Finland" />
 
-      <span class="result">12+ stays</span>
+      <span class="result">{{ data.length }}+ stays</span>
     </header>
 
     <ul class="list-stays">
